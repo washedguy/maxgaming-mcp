@@ -54,20 +54,18 @@ Generate a config snippet:
 uv run maxgaming-mcp --config
 ```
 
-### uvx (once published to a Git repository)
+### uvx
 
 ```json
 {
   "mcpServers": {
     "maxgaming": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/<user>/maxgaming-mcp", "maxgaming-mcp"]
+      "args": ["--from", "git+https://github.com/washedguy/maxgaming-mcp", "maxgaming-mcp"]
     }
   }
 }
 ```
-
-Replace `<user>` with the actual GitHub username once the repository is published.
 
 ## Tools
 
