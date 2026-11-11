@@ -279,6 +279,16 @@ def parse_product_page(text, base, url):
         if m:
             availability = m.group(1).strip()
 
+    # Stock count (only on some storefronts, e.g. US: "20+ left in stock")
+    stock_text = None
+    m = re.search(r"class=\"saldo\">.*?Availability:\s*(.+?)</div>", text, re.DOTALL)
+    if m:
+        stock_text = " ".join(_strip_tags(m.group(1)).split())
+    if not stock_text:
+        m = re.search(r"(\d+\+?\s*left in stock)", text, re.IGNORECASE)
+        if m:
+            stock_text = " ".join(m.group(1).split())
+
     manuf_artnr = None
     m = re.search(r"Manuf\.\s*article number:\s*(.+?)(?:<|$)", text, re.IGNORECASE | re.DOTALL)
     if not m:
@@ -360,5 +370,6 @@ def parse_product_page(text, base, url):
         "features": features,
         "manufacturer_article_number": manuf_artnr,
         "availability_text": availability,
+        "stock_text": stock_text,
     }
     return details

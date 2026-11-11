@@ -30,6 +30,7 @@ class Product(BaseModel):
     url: str | None
     delivery: Delivery
     availability_text: str | None = None
+    stock_text: str | None = None
     variants: list["Variant"] | None = None
     features: list["FeatureGroup"] | None = None
     images: list["Image"] | None = None
