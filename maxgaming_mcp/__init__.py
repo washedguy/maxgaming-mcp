@@ -1,0 +1,1 @@
+"""MaxGaming MCP server."""
