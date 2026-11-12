@@ -61,6 +61,10 @@ Live connectivity check:
 uv run maxgaming-mcp --check --country us
 ```
 
+## Author
+
+Built by Jan Herklotz at [washed.dev](https://washed.dev) — websites and web apps from Wiesbaden. Have a project in mind? [Get in touch](mailto:hello@washed.dev).
+
 ## License
 
 [MIT](LICENSE)
