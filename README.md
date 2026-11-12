@@ -63,4 +63,4 @@ uv run maxgaming-mcp --check --country us
 
 ## License
 
-MIT
+[MIT](LICENSE)
